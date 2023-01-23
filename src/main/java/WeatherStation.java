@@ -7,8 +7,17 @@ public class WeatherStation implements Subject{
     private float humidity;
     private float pressure;
 
-    public WeatherStation () {
+    private static WeatherStation objUnique;
+
+    private WeatherStation () {
         observers = new ArrayList<Observer>();
+    }
+
+    public static WeatherStation getInstance() {
+        if (objUnique == null) {
+            objUnique = new WeatherStation();
+        }
+        return objUnique;
     }
 
     public void registerObserver (Observer o) {

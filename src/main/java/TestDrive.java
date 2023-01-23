@@ -1,7 +1,7 @@
 public class TestDrive {
 
     public static void main (String[] args) {
-        WeatherStation weatherStation = new WeatherStation();
+        WeatherStation weatherStation = WeatherStation.getInstance();
         CurrentState currentStateDisplay = new CurrentState(weatherStation);
         weatherStation.setMeasurements(2, 80, 990);
         weatherStation.setMeasurements(0, 70, 950);
